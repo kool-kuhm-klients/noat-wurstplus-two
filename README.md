@@ -5,4 +5,5 @@
 # what bout old perry phobos?
 #### i seems to have really bad burnout from the project so i need to take a break and i have been having sleep debrevation from fixing the projects so i would start with easier projects.
 # changelogs from old w+ 2 to my w+ 2
-#### ci for automatically building
+#### - ci for automatically building
+#### - kami147's instant mine
