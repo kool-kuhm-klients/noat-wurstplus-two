@@ -17,7 +17,7 @@ import net.minecraft.util.math.Vec3d;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BurrowUtil {
+public class WurstplusBurrowUtil {
 
     public static final Minecraft mc = Minecraft.getMinecraft();
 

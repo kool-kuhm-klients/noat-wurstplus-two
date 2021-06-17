@@ -1,6 +1,8 @@
 package me.travis.wurstplus.wurstplustwo.hacks.combat;
 
 import me.travis.wurstplus.wurstplustwo.guiscreen.settings.WurstplusSetting;
+import me.travis.wurstplus.wurstplustwo.hacks.WurstplusHack;
+import me.travis.wurstplus.wurstplustwo.hacks.WurstplusCategory;
 import me.travis.wurstplus.wurstplustwo.util.*;
 import me.zero.alpine.fork.listener.EventHandler;
 import me.zero.alpine.fork.listener.Listener;
@@ -29,7 +31,7 @@ public class WurstplusBurrow extends WurstplusHack {
     WurstplusSetting rotate = create("Rotate", "BurrowRotate", false);
     WurstplusSetting silent = create("Silent", "Silent", true);
     WurstplusSetting height = create ("Height", "Height", 3, 0, 30);
-    
+
     private BlockPos originalPos;
     private int oldSlot = -1;
     private Minecraft mc = new Minecraft.getMinecraft();
