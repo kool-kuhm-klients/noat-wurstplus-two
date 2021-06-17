@@ -6,6 +6,7 @@ import me.zero.alpine.fork.listener.EventHandler;
 import me.zero.alpine.fork.listener.Listener;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.entity.Entity;
@@ -17,11 +18,6 @@ import net.minecraft.util.math.BlockPos;
 
 public class WurstplusBurrow extends WurstplusHack {
 
-
-    private BlockPos originalPos;
-    private int oldSlot = -1;
-    private Minecraft mc = new Minecraft.getMinecraft();
-
     public WurstplusBurrow() {
       super(WurstplusCategory.WURSTPLUS_COMBAT);
       this.name        = "Burrow";
@@ -32,9 +28,13 @@ public class WurstplusBurrow extends WurstplusHack {
       WurstplusSetting rotate = create("Rotate", "BurrowRotate", false);
       WurstplusSetting silent = create("Silent", "Silent", true);
       WurstplusSetting height = create ("Height", "Height", 3, 0, 30);
+
+      private BlockPos originalPos;
+      private int oldSlot = -1;
+      private Minecraft mc = new Minecraft.getMinecraft();
     }
 
-    // original author: obsidianbreaker 
+    // original author: obsidianbreaker
     @Override
     public void enable() {
       this.enable();
