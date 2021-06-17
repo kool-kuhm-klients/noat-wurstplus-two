@@ -59,6 +59,7 @@ public class WurstplusModuleManager {
 		add_hack(new WurstplusBedAura());
 		add_hack(new WurstplusOffhand());
 		add_hack(new WurstplusAutoGapple());
+		add_hack(new WurstplusAutoCrystalNew());
 		add_hack(new WurstplusAutoTotem());
 		add_hack(new WurstplusAutoMine());
 
