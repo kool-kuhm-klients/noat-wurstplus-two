@@ -257,7 +257,7 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
         place_delay_counter++;
 
         if (detail_name != null && targetstuffgenerate == "0") {
-          targetstuffgenerate = "1"
+          targetstuffgenerate = "1";
           WurstplusMessageUtil.send_client_message("AutoCrystal - Now placing against " + detail_name.getValue());
         } else {
           int targetstuffgenerate = "0";
