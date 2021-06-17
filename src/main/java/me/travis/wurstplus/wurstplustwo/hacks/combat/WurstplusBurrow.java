@@ -15,14 +15,14 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
-public class InstantBurrow extends WurstplusHack {
+public class WurstplusBurrow extends WurstplusHack {
 
 
     private BlockPos originalPos;
     private int oldSlot = -1;
     private Minecraft mc = new Minecraft.getMinecraft();
 
-    public InstantBurrow() {
+    public WurstplusBurrow() {
       super(WurstplusCategory.WURSTPLUS_COMBAT);
       this.name        = "Burrow";
       this.tag         = "Burrow";
@@ -34,8 +34,7 @@ public class InstantBurrow extends WurstplusHack {
       WurstplusSetting height = create ("Height", "Height", 3, 0, 30);
     }
 
-    // original author: obsidianbreaker
-
+    // original author: obsidianbreaker 
     @Override
     public void enable() {
       this.enable();
@@ -47,15 +46,15 @@ public class InstantBurrow extends WurstplusHack {
 
       if (mc.world.getBlockState(new BlockPos(mc.player.posX, mc.player.posY, mc.player.posZ)).getBlock().equals(Blocks.OBSIDIAN) || mc.world.getBlockState(new BlockPos(mc.player.posX, mc.player.posY, mc.player.posZ)).getBlock().equals(Blocks.ENDER_CHEST)) {
           WurstplusMessageUtil.send_client_message("you idiot, you are already in an obsidian or echests");
-          set_disable();
+          this.set_disable();
           return;
       } else if (WurstplusBurrow.isInterceptedByOther(originalPos)) {
           WurstplusMessageUtil.send_client_message("you are intercepted by a fucking entity get out of there");
-          set_disable();
+          this.set_disable();
           return;
-      } else if (getHotbarSlot(Blocks.OBSIDIAN) == -1 && getHotbarSlot(Blocks.ENDER_CHEST) == -1) {
+      } else if (WurstplusBurrowUtil.getHotbarSlot(Blocks.OBSIDIAN) == -1 && WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST) == -1) {
           WurstplusMessageUtil.send_client_message("you don't even have a fucking obsidian or an enderchest");
-          set_disable();
+          this.set_disable();
           return;
       } else if (!mc.world.getBlockState(originalPos.add(0, 1, 0)).getBlock().equals(Blocks.AIR) || !mc.world.getBlockState(originalPos.add(0, 2, 0)).getBlock().equals(Blocks.AIR) || !mc.world.getBlockState(originalPos.add(0, 3, 0)).getBlock().equals(Blocks.AIR)) {
           WurstplusMessageUtil.send_client_error_message("free more space you dum dum");
@@ -63,7 +62,7 @@ public class InstantBurrow extends WurstplusHack {
           return;
       } else if (mc.isSingleplayer()) {
           WurstplusMessageUtil.send_client_error_message("ayo wtf, why are you on singleplayer");
-          set_disable();
+          this.set_disable();
           return;
       }
       if (silent.get_value(1)) mc.timer.tickLength = 1f;
@@ -74,12 +73,12 @@ public class InstantBurrow extends WurstplusHack {
       mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 1.16610926093821D, mc.player.posZ, true));
       mc.player.setPosition(mc.player.posX, mc.player.posY + 1.16610926093821D, mc.player.posZ);
 
-      if (enderchest.get_value(true) && getHotbarSlot(Blocks.ENDER_CHEST) != -1) {
-          mc.player.inventory.currentItem = getHotbarSlot(Blocks.ENDER_CHEST);
-      } else if (getHotbarSlot(Blocks.OBSIDIAN) != -1) {
-          mc.player.inventory.currentItem = getHotbarSlot(Blocks.OBSIDIAN);
+      if (enderchest.get_value(true) && WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST) != -1) {
+          mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST);
+      } else if (WurstplusBurrowUtil.getHotbarSlot(Blocks.OBSIDIAN) != -1) {
+          mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.OBSIDIAN);
       } else {
-          mc.player.inventory.currentItem = getHotbarSlot(Blocks.ENDER_CHEST);
+          mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST);
       }
 
       BurrowUtil.placeBlock(originalPos, rotate.get_value(true),  true, false, true, false);
@@ -89,7 +88,7 @@ public class InstantBurrow extends WurstplusHack {
       mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + height.get_value(1), mc.player.posZ, true));
 
       mc.timer.tickLength = oldTickLength;
-      set_disable();
+      this.set_disable();
     }
 
 
