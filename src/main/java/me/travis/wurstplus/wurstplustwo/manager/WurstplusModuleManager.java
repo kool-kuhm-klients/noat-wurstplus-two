@@ -65,6 +65,7 @@ public class WurstplusModuleManager {
 		// Exploit.
 		add_hack(new WurstplusXCarry());
 		add_hack(new WurstplusNoSwing());
+		add_hack(new WurstplusInstaMine());
 		add_hack(new WurstplusPortalGodMode());
 		add_hack(new WurstplusPacketMine());
 		add_hack(new WurstplusEntityMine());
@@ -77,7 +78,7 @@ public class WurstplusModuleManager {
 		add_hack(new WurstplusStep());
 		add_hack(new WurstplusSprint());
 		add_hack(new WurstPlusAnchor());
-		
+
 		// Render.
 		add_hack(new WurstplusHighlight());
 		add_hack(new WurstplusHoleESP());
