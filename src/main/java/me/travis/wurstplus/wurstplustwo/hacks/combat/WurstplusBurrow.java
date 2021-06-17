@@ -20,7 +20,7 @@ public class InstantBurrow extends WurstplusHack {
 
     private BlockPos originalPos;
     private int oldSlot = -1;
-    private Minecraft mc = g
+    private Minecraft mc = new Minecraft.getMinecraft();
 
     public InstantBurrow() {
       super(WurstplusCategory.WURSTPLUS_COMBAT);
