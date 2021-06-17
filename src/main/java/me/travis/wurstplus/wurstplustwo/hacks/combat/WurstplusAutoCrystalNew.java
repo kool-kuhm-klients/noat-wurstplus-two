@@ -130,6 +130,7 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
     private boolean is_rotating;
     private boolean did_anything;
     private boolean outline;
+    private int targetstuffgenerate;
     private boolean solid;
 
     private int chain_step = 0;
@@ -258,9 +259,9 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
 
         if (detail_name != null && targetstuffgenerate == 0) {
           targetstuffgenerate = 1;
-          WurstplusMessageUtil.send_client_message("AutoCrystal - Now placing against " + detail_name.getValue());
+          WurstplusMessageUtil.send_client_message("AutoCrystal - Now placing against " + detail_name.get_value());
         } else {
-          int targetstuffgenerate = 0;
+          targetstuffgenerate = 0;
         }
     }
 
