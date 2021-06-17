@@ -23,16 +23,16 @@ public class WurstplusBurrow extends WurstplusHack {
       this.name        = "Burrow";
       this.tag         = "Burrow";
       this.description = "ifarticuhm was requesting for this one :^)";
-
-      WurstplusSetting enderchest = create("Ender Chest", "BurrowEnderChest", true);
-      WurstplusSetting rotate = create("Rotate", "BurrowRotate", false);
-      WurstplusSetting silent = create("Silent", "Silent", true);
-      WurstplusSetting height = create ("Height", "Height", 3, 0, 30);
-
-      private BlockPos originalPos;
-      private int oldSlot = -1;
-      private Minecraft mc = new Minecraft.getMinecraft();
     }
+
+    WurstplusSetting enderchest = create("Ender Chest", "BurrowEnderChest", true);
+    WurstplusSetting rotate = create("Rotate", "BurrowRotate", false);
+    WurstplusSetting silent = create("Silent", "Silent", true);
+    WurstplusSetting height = create ("Height", "Height", 3, 0, 30);
+    
+    private BlockPos originalPos;
+    private int oldSlot = -1;
+    private Minecraft mc = new Minecraft.getMinecraft();
 
     // original author: obsidianbreaker
     @Override
@@ -65,7 +65,7 @@ public class WurstplusBurrow extends WurstplusHack {
           this.set_disable();
           return;
       }
-      if (silent.get_value(1)) mc.timer.tickLength = 1f;
+      if (silent.get_value(true)) mc.timer.tickLength = 1f;
 
       mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.41999998688698D, mc.player.posZ, true));
       mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.7531999805211997D, mc.player.posZ, true));
