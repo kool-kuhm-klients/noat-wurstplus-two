@@ -30,6 +30,7 @@ public class WurstplusChatSuffix extends WurstplusHack {
 	boolean accept_suffix;
 	boolean suffix_default;
 	boolean suffix_random;
+	boolean suffix_custom;
 
 	StringBuilder suffix;
 
@@ -101,6 +102,11 @@ public class WurstplusChatSuffix extends WurstplusHack {
 		if (type.in("Random")) {
 			suffix_default = false;
 			suffix_random  = true;
+		}
+
+		if (type.in("Custom")) {
+			suffix_default = false;
+			suffix_custom  = true;
 		}
 
 		// If accept.
