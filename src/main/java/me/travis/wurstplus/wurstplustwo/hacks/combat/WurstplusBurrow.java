@@ -35,6 +35,7 @@ public class WurstplusBurrow extends WurstplusHack {
     private BlockPos originalPos;
     private int oldSlot = -1;
 	  private final Minecraft mc = Minecraft.getMinecraft();
+    float oldTickLength = mc.timer.tickLength;
 
     // original author: obsidianbreaker
     @Override
