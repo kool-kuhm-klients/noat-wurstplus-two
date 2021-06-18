@@ -14,6 +14,6 @@ public class WurstplusCapes extends WurstplusHack {
         this.description = "see epic capes behind epic dudes";
     }
 
-    WurstplusSetting cape = create("Cape", "CapeCape", "New", combobox("New", "OG", "Clockwork", "Clockwork MC", "ifarticuhm", "Ping Players"));
+    WurstplusSetting cape = create("Cape", "CapeCape", "New", combobox("New", "OG", "Clockwork", "Clockwork MC", "ifarticuhm", "Ping Players", "teejwrld"));
 
 }
