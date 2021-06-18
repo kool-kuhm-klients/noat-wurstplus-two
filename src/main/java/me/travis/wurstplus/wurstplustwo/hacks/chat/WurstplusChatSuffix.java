@@ -5,6 +5,7 @@ import me.travis.wurstplus.wurstplustwo.event.events.WurstplusEventPacket;
 import me.travis.wurstplus.wurstplustwo.guiscreen.settings.WurstplusSetting;
 import me.travis.wurstplus.wurstplustwo.hacks.WurstplusCategory;
 import me.travis.wurstplus.wurstplustwo.hacks.WurstplusHack;
+import me.travis.wurstplus.wurstplustwo.util.WurstplusChatSuffixUtil;
 import me.zero.alpine.fork.listener.EventHandler;
 import me.zero.alpine.fork.listener.Listener;
 import net.minecraft.network.play.client.CPacketChatMessage;
@@ -24,7 +25,7 @@ public class WurstplusChatSuffix extends WurstplusHack {
 	}
 
 	WurstplusSetting ignore = create("Ignore", "ChatSuffixIgnore", true);
-	WurstplusSetting type   = create("Type", "ChatSuffixType", "Default", combobox("Default", "Random"));
+	WurstplusSetting type   = create("Type", "ChatSuffixType", "Default", combobox("Default", "Random", "Custom"));
 
 	boolean accept_suffix;
 	boolean suffix_default;
@@ -109,6 +110,10 @@ public class WurstplusChatSuffix extends WurstplusHack {
 				message += Wurstplus.WURSTPLUS_SIGN + convert_base("wurstplus two");
 			}
 
+			if (suffix_custom) {
+				message += Wurstplus.WURSTPLUS_SIGN + convert_base(WurstplusChatSuffixUtil.get_message());
+			}
+
 			if (suffix_random) {
 				// Create first the string builder.
 				StringBuilder suffix_with_randoms = new StringBuilder();
@@ -117,7 +122,7 @@ public class WurstplusChatSuffix extends WurstplusHack {
 				suffix_with_randoms.append(convert_base(random_string(random_client_name)));
 				suffix_with_randoms.append(convert_base(random_string(random_client_finish)));
 
-				message += Wurstplus.WURSTPLUS_SIGN + suffix_with_randoms.toString(); 
+				message += Wurstplus.WURSTPLUS_SIGN + suffix_with_randoms.toString();
 			}
 
 			// If message 256 string length substring.
