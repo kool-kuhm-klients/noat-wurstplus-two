@@ -1,6 +1,6 @@
 package me.travis.wurstplus.wurstplustwo.util;
 
-import me.travis.wurstplus.wurstplustwo.guiscreen.settings.Setting;
+import me.travis.wurstplus.wurstplustwo.guiscreen.settings.WurstplusSetting;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -18,6 +18,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Arrays;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -69,16 +70,16 @@ public class WurstplusBurrowUtil {
         }
     }
 
-    public static void swingArm(Setting setting) {
-        if (setting.in("Mainhand") || setting.in("Both")) {
+    public static void swingArm(WurstplusSetting WurstplusSetting) {
+        if (WurstplusSetting.in("Mainhand") || WurstplusSetting.in("Both")) {
             mc.player.swingArm(EnumHand.MAIN_HAND);
         }
-        if (setting.in("Offhand") || setting.in("Both")) {
+        if (WurstplusSetting.in("Offhand") || WurstplusSetting.in("Both")) {
             mc.player.swingArm(EnumHand.OFF_HAND);
         }
     }
 
-    public static boolean placeBlock(BlockPos pos, int slot, boolean rotate, boolean rotateBack, Setting setting) {
+    public static boolean placeBlock(BlockPos pos, int slot, boolean rotate, boolean rotateBack, WurstplusSetting WurstplusSetting) {
         if (isBlockEmpty(pos)) {
             int old_slot = -1;
             if (slot != mc.player.inventory.currentItem) {
@@ -112,7 +113,7 @@ public class WurstplusBurrowUtil {
                         mc.player.connection.sendPacket(new Rotation(rot[0], rot[1], mc.player.onGround));
                     }
 
-                    swingArm(setting);
+                    swingArm(WurstplusSetting);
 
                     if (old_slot != -1) {
                         mc.player.inventory.currentItem = old_slot;
