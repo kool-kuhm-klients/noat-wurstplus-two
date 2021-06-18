@@ -35,7 +35,7 @@ public class WurstplusBurrow extends WurstplusHack {
     private BlockPos originalPos;
     private int oldSlot = -1;
 	  private final Minecraft mc = Minecraft.getMinecraft();
-    float oldTickLength = mc.timer.tickLength;
+    private float oldTickLength = mc.timer.tickLength;
 
     // original author: obsidianbreaker
     @Override
@@ -51,11 +51,11 @@ public class WurstplusBurrow extends WurstplusHack {
           WurstplusMessageUtil.send_client_message("you idiot, you are already in an obsidian or echests");
           this.set_disable();
           return;
-      } else if (WurstplusBurrow.isInterceptedByOther(originalPos)) {
+      } else if (this.isInterceptedByOther(originalPos)) {
           WurstplusMessageUtil.send_client_message("you are intercepted by a fucking entity get out of there");
           this.set_disable();
           return;
-      } else if (WurstplusBurrowUtil.getHotbarSlot(Blocks.OBSIDIAN) == -1 && WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST) == -1) {
+      } else if (getHotbarSlot(Blocks.OBSIDIAN) == -1 && getHotbarSlot(Blocks.ENDER_CHEST) == -1) {
           WurstplusMessageUtil.send_client_message("you don't even have a fucking obsidian or an enderchest");
           this.set_disable();
           return;
@@ -76,12 +76,12 @@ public class WurstplusBurrow extends WurstplusHack {
       mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 1.16610926093821D, mc.player.posZ, true));
       mc.player.setPosition(mc.player.posX, mc.player.posY + 1.16610926093821D, mc.player.posZ);
 
-      if (enderchest.get_value(true) && WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST) != -1) {
-          mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST);
-      } else if (WurstplusBurrowUtil.getHotbarSlot(Blocks.OBSIDIAN) != -1) {
-          mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.OBSIDIAN);
+      if (enderchest.get_value(true) && getHotbarSlot(Blocks.ENDER_CHEST) != -1) {
+          mc.player.inventory.currentItem = getHotbarSlot(Blocks.ENDER_CHEST);
+      } else if (getHotbarSlot(Blocks.OBSIDIAN) != -1) {
+          mc.player.inventory.currentItem = getHotbarSlot(Blocks.OBSIDIAN);
       } else {
-          mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST);
+          mc.player.inventory.currentItem = getHotbarSlot(Blocks.ENDER_CHEST);
       }
 
       WurstplusBurrowUtil.placeBlock(originalPos, rotate.get_value(true),  true, false, true, false);
@@ -100,6 +100,24 @@ public class WurstplusBurrow extends WurstplusHack {
             if (entity.equals(mc.player)) continue;
             if (entity instanceof EntityItem) continue;
             if (new AxisAlignedBB(pos).intersects(entity.getEntityBoundingBox())) return true;
+        }
+        return false;
+    }
+
+
+    public static int getHotbarSlot(final Block block) {
+        for (int i = 0; i < 9; i++) {
+            final Item item = mc.player.inventory.getStackInSlot(i).getItem();
+            if (item instanceof ItemBlock && ((ItemBlock) item).getBlock().equals(block)) return i;
+        }
+        return -1;
+    }
+
+    public static boolean getEnderChest() {
+        try {
+        }
+        catch (Exception e) {
+            return false;
         }
         return false;
     }
