@@ -6,9 +6,9 @@ import me.travis.wurstplus.wurstplustwo.command.WurstplusCommand;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusChatSuffixUtil;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusMessageUtil;
 
-public class WursptlusChatSuffix extends WurstplusCommand {
+public class WurstplusChatSuffix extends WurstplusCommand {
 
-    public WursptlusChatSuffix() {
+    public WurstplusChatSuffix() {
         super("chatsuffix", "set chatsuffix");
     }
 
@@ -29,7 +29,7 @@ public class WursptlusChatSuffix extends WurstplusCommand {
                 }
                 csuffix.append(word).append(" ");
             }
-            WursptlusChatSuffixUtil.set_message(csuffix.toString());
+            WurstplusChatSuffixUtil.set_message(csuffix.toString());
             WurstplusMessageUtil.send_client_message("chatsuffix change to " + ChatFormatting.BOLD + csuffix.toString());
             Wurstplus.get_config_manager().save_settings();
             return true;
