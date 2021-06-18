@@ -26,32 +26,31 @@ public class WurstplusBurrowUtil {
      */
 
     public static boolean placeBlock(BlockPos pos, EnumHand hand, boolean rotate, boolean packet, boolean isSneaking) {
-        boolean sneaking = false;
-        EnumFacing side = getFirstFacing(pos);
-        if (side == null) {
-            return isSneaking;
-        }
+      boolean sneaking = false;
+      EnumFacing side = getFirstFacing(pos);
+      if (side == null) {
+          return isSneaking;
+      }
 
-        BlockPos neighbour = pos.offset(side);
-        EnumFacing opposite = side.getOpposite();
+      BlockPos neighbour = pos.offset(side);
+      EnumFacing opposite = side.getOpposite();
 
-        Vec3d hitVec = new Vec3d(neighbour).add(0.5, 0.5, 0.5).add(new Vec3d(opposite.getDirectionVec()).scale(0.5));
-        Block neighbourBlock = mc.world.getBlockState(neighbour).getBlock();
+      Vec3d hitVec = new Vec3d(neighbour).add(0.5, 0.5, 0.5).add(new Vec3d(opposite.getDirectionVec()).scale(0.5));
+      Block neighbourBlock = mc.world.getBlockState(neighbour).getBlock();
 
-        if (!mc.player.isSneaking()) {
-            mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.START_SNEAKING));
-            mc.player.setSneaking(true);
-            sneaking = true;
-        }
+      if (!mc.player.isSneaking()) {
+          mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.START_SNEAKING));
+          mc.player.setSneaking(true);
+          sneaking = true;
+      }
 
-        if (rotate) {
-            faceVector(hitVec, true);
-        }
+      if (rotate) {
+          faceVector(hitVec, true);
+      }
 
-        rightClickBlock(neighbour, hitVec, hand, opposite, packet);
-        mc.player.swingArm(EnumHand.MAIN_HAND);
-        mc.rightClickDelayTimer = 4; //?
-        return sneaking || isSneaking;
-    }
+      rightClickBlock(neighbour, hitVec, hand, opposite, packet);
+      mc.player.swingArm(EnumHand.MAIN_HAND);
+      mc.rightClickDelayTimer = 4; //?
+      return sneaking || isSneaking;
   }
 }
