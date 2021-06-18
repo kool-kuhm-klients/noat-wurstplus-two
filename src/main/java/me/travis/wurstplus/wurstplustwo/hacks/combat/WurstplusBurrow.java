@@ -34,7 +34,7 @@ public class WurstplusBurrow extends WurstplusHack {
 
     private BlockPos originalPos;
     private int oldSlot = -1;
-    private Minecraft mc = new Minecraft.getMinecraft();
+	  private final Minecraft mc = Minecraft.getMinecraft();
 
     // original author: obsidianbreaker
     @Override
@@ -83,7 +83,7 @@ public class WurstplusBurrow extends WurstplusHack {
           mc.player.inventory.currentItem = WurstplusBurrowUtil.getHotbarSlot(Blocks.ENDER_CHEST);
       }
 
-      BurrowUtil.placeBlock(originalPos, rotate.get_value(true),  true, false, true, false);
+      WurstplusBurrowUtil.placeBlock(originalPos, rotate.get_value(true),  true, false, true, false);
       mc.player.inventory.currentItem = oldSlot;
       mc.player.setPosition(mc.player.posX, mc.player.posY - 1.16610926093821D, mc.player.posZ);
 
