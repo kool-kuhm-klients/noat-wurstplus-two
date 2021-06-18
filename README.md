@@ -7,3 +7,4 @@
 # changelogs from old w+ 2 to my w+ 2
 #### - ci for automatically building
 #### - kami147's instant mine
+#### - cape :trollface:
