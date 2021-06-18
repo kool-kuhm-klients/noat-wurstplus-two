@@ -35,6 +35,9 @@ public abstract class WurstplusMixinAbstractClientPlayer {
             if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("Clockwork MC")) {
                 r = new ResourceLocation("custom/clockworkmc.png");
             }
+            if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("ifarticuhm")) {
+                r = new ResourceLocation("custom/ifarticuhm.png");
+            }
             if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("Clockwork")) {
               r = new ResourceLocation("custom/clockwork.png");
             } else {
