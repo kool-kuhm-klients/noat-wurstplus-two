@@ -13,7 +13,7 @@ public class WurstplusCapeUtil {
 
     public static ArrayList<String> get_uuids() {
         try {
-            URL url = new URL("https://pastebin.com/raw/u7fPkfBD");
+            URL url = new URL("https://raw.githubusercontent.com/noatmc/noat-wurstplus-two-capes/main/uuids.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
             final ArrayList<String> uuid_list = new ArrayList<>();
 
