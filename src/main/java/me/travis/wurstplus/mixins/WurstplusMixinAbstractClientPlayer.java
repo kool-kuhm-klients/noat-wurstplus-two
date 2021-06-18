@@ -42,7 +42,7 @@ public abstract class WurstplusMixinAbstractClientPlayer {
                       r = new ResourceLocation("custom/clockworkmc.png");
                   } else {
                     if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("Ping Players")) {
-                      r = new ResourceLocation("custom/pingplayers.png")
+                      r = new ResourceLocation("custom/pingplayers.png");
                     } else {
                       r = new ResourceLocation("custom/cape.png");
                     }
