@@ -29,19 +29,22 @@ public abstract class WurstplusMixinAbstractClientPlayer {
                 return;
             }
             ResourceLocation r;
-            if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("OG")) {
-                r = new ResourceLocation("custom/cape-old.png");
-            }
-            if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("Clockwork MC")) {
-                r = new ResourceLocation("custom/clockworkmc.png");
-            }
-            if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("ifarticuhm")) {
-                r = new ResourceLocation("custom/ifarticuhm.png");
-            }
             if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("Clockwork")) {
               r = new ResourceLocation("custom/clockwork.png");
             } else {
-                r = new ResourceLocation("custom/cape.png");
+              if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("OG")) {
+                  r = new ResourceLocation("custom/cape-old.png");
+              } else {
+                if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("ifarticuhm")) {
+                    r = new ResourceLocation("custom/ifarticuhm.png");
+                } else {
+                  if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("Clockwork MC")) {
+                      r = new ResourceLocation("custom/clockworkmc.png");
+                  } else {
+                    r = new ResourceLocation("custom/cape.png");
+                  }
+                }
+              }
             }
 
             callbackInfoReturnable.setReturnValue(r);
