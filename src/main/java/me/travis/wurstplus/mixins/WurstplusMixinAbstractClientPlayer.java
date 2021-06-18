@@ -47,7 +47,11 @@ public abstract class WurstplusMixinAbstractClientPlayer {
                       if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("teejwrld")) {
                         r = new ResourceLocation("custom/teejwrld.png");
                       } else {
-                        r = new ResourceLocation("custom/cape.png");
+                        if (Wurstplus.get_setting_manager().get_setting_with_tag("Capes", "CapeCape").in("cringesyringe")) {
+                          r = new ResourceLocation("custom/cringesyringe.png");
+                        } else {
+                          r = new ResourceLocation("custom/cape.png");
+                        }
                       }
                     }
                   }
