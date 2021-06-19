@@ -4,7 +4,7 @@ import me.travis.wurstplus.wurstplustwo.Wurstplustwo;
 import me.travis.wurstplus.Wurstplus;
 
 public class WurstplusWatermarkChatMods extends WurstplusHack {
-	public WurstplusdWatermarkChatMods() {
+	public WurstplusWatermarkChatMods() {
 		super(WurstplusCategory.WURSTPLUS_CHAT);
 
 		this.name        = "Chat Watermark";
