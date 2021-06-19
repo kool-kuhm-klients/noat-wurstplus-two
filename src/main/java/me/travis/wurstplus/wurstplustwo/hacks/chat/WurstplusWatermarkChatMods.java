@@ -1,7 +1,7 @@
 package me.travis.wurstplus.wurstplustwo.hacks.chat;
 
-import me.travis.wurstplus.wurstplustwo.Wurstplustwo;
-import me.travis.wurstplus.Wurstplus;
+import me.travis.wurstplus.wurstplustwo.Wurstplus;
+import me.travis.wurstplus.wurstplustwo.hacks.WurstplusHack;
 
 public class WurstplusWatermarkChatMods extends WurstplusHack {
 	public WurstplusWatermarkChatMods() {
