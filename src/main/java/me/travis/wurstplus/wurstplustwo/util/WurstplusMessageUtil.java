@@ -28,8 +28,10 @@ public class WurstplusMessageUtil {
 
 	public static void toggle_message(WurstplusHack module) {
 
-		if (WurstplusWatermarkChatMods.is_active()) {
-			opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
+		if (module.is_active()) {
+			if (module.get_tag().equals("ChatWatermark")) {
+				opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
+			}
 		}
 
 		// block game shit
