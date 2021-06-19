@@ -26,25 +26,22 @@ public class WurstplusMessageUtil {
 
 	public static String opener = g + Wurstplus.WURSTPLUS_NAME + ChatFormatting.GRAY + " > " + r;
 
-	public static void toggle_message(WurstplusHack module) {
-
-		// block game shit
-
-		if (module.is_active()) {
-			if (module.get_tag().equals("ChatWatermark")) {
+	public static void toggle_message(WurstplusHack m) {
+		if (m.is_active()) {
+			if (m.get_tag().equals("ChatWatermark")) {
 				opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
 			} else {
-				if (module.get_tag().equals("AutoCrystal")) {
+				if (m.get_tag().equals("AutoCrystal")) {
 					client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
 				} else {
-					client_message_simple(opener + "we do be " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
-				}	
+					client_message_simple(opener + "we do be " + ChatFormatting.RED + m.get_name().toLowerCase() + r + "in'");
+				}
 			}
 		} else {
-			if (module.get_tag().equals("AutoCrystal")) {
+			if (m.get_tag().equals("AutoCrystal")) {
 				client_message_simple(opener + "we aint" + ChatFormatting.RED + " trollin' " + r + "no more");
 			} else {
-				client_message_simple(opener + "we ain't " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
+				client_message_simple(opener + "we ain't " + ChatFormatting.RED + m.get_name().toLowerCase() + r + "in'");
 			}
 		}
 	}
@@ -63,7 +60,7 @@ public class WurstplusMessageUtil {
 	}
 
 	public static void send_client_message_simple(String message) {
-		if (module.is_active()) {
+		if (m.is_active()) {
 			client_message(ChatFormatting.GOLD + opener + r + message);
 		} else {
 			client_message(ChatFormatting.GOLD + opener + r + message);
