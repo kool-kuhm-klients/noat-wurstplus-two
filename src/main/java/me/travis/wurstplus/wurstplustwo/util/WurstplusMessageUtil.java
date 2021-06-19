@@ -35,8 +35,7 @@ public class WurstplusMessageUtil {
 
 		if (module.is_active()) {
 			if (module.get_tag().equals("AutoCrystal")) {
-					client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
-				}
+				client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
 			} else {
 				client_message_simple(opener + "we do be " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
 			}
