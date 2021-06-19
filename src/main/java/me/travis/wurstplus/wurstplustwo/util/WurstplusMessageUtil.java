@@ -28,21 +28,10 @@ public class WurstplusMessageUtil {
 
 	public static void toggle_message(WurstplusHack m) {
 		if (m.is_active()) {
-			if (m.get_tag().equals("ChatWatermark")) {
-				opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
-			} else {
-				if (m.get_tag().equals("AutoCrystal")) {
-					client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
-				} else {
-					client_message_simple(opener + "we do be " + ChatFormatting.RED + m.get_name().toLowerCase() + r + "in'");
-				}
-			}
+			send_client_message("we " + ChatFormatting.BOLD + m.get_name() + r + "ing");
 		} else {
-			if (m.get_tag().equals("AutoCrystal")) {
-				client_message_simple(opener + "we aint" + ChatFormatting.RED + " trollin' " + r + "no more");
-			} else {
-				client_message_simple(opener + "we ain't " + ChatFormatting.RED + m.get_name().toLowerCase() + r + "in'");
-			}
+			// should send we do a little bit of strafeing
+			send_client_message("we ain't " + ChatFormatting.BOLD + m.get_name().toLowerCase() + r + " no more")
 		}
 	}
 

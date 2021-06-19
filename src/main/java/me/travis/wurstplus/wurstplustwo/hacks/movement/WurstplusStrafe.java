@@ -17,7 +17,7 @@ public class WurstplusStrafe extends WurstplusHack {
 	public WurstplusStrafe() {
 		super(WurstplusCategory.WURSTPLUS_MOVEMENT);
 
-		this.name        = "Strafe";
+		this.name        = "Speed";
 		this.tag         = "Strafe";
 		this.description = "its like running, but faster";
 	}
@@ -31,7 +31,7 @@ public class WurstplusStrafe extends WurstplusHack {
 
 	@Override
 	public void update() {
-		
+
 		if (mc.player.isRiding()) return;
 
 		if (mc.player.isInWater() || mc.player.isInLava()) {
@@ -62,7 +62,7 @@ public class WurstplusStrafe extends WurstplusHack {
                 mc.player.motionX -= MathHelper.sin(yaw) * 0.2f;
                 mc.player.motionZ += MathHelper.cos(yaw) * 0.2f;
 				mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY+0.4, mc.player.posZ, false));
-				
+
 			}
 
 		}
