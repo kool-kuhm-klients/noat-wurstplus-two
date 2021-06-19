@@ -23,7 +23,7 @@ public class WurstplusMessageUtil {
 	public static ChatFormatting a = ChatFormatting.DARK_AQUA;
 	public static ChatFormatting r = ChatFormatting.RESET;
 
-	public static String opener = g + WurstplusChatSuffixUtil.get_message() + ChatFormatting.GRAY + " > " + r;
+	public static String opener = g + WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
 
 	public static void toggle_message(WurstplusHack module) {
 		if (module.is_active()) {
@@ -55,15 +55,15 @@ public class WurstplusMessageUtil {
 	}
 
 	public static void send_client_message_simple(String message) {
-		client_message(ChatFormatting.GOLD + Wurstplus.WURSTPLUS_NAME + " " + r + message);
+		client_message(ChatFormatting.GOLD + opener + r + message);
 	}
 
 	public static void send_client_message(String message) {
-		client_message(ChatFormatting.GOLD + Wurstplus.WURSTPLUS_NAME + " " + r + message);
+		client_message(ChatFormatting.GOLD + opener + r + message);
 	}
 
 	public static void send_client_error_message(String message) {
-		client_message(ChatFormatting.RED + Wurstplus.WURSTPLUS_NAME + " " + r + message);
+		client_message(ChatFormatting.RED + opener + r + message);
 	}
 
 	public static class ChatMessage extends TextComponentBase {
