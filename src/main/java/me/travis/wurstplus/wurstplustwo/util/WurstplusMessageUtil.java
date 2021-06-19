@@ -28,19 +28,17 @@ public class WurstplusMessageUtil {
 
 	public static void toggle_message(WurstplusHack module) {
 
-		if (module.is_active()) {
-			if (module.get_tag().equals("ChatWatermark")) {
-				opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
-			}
-		}
-
 		// block game shit
 
 		if (module.is_active()) {
-			if (module.get_tag().equals("AutoCrystal")) {
-				client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
+			if (module.get_tag().equals("ChatWatermark")) {
+				opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
 			} else {
-				client_message_simple(opener + "we do be " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
+				if (module.get_tag().equals("AutoCrystal")) {
+					client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
+				} else {
+					client_message_simple(opener + "we do be " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
+				}	
 			}
 		} else {
 			if (module.get_tag().equals("AutoCrystal")) {
