@@ -31,7 +31,7 @@ public class WurstplusMessageUtil {
 			send_client_message("we " + ChatFormatting.BOLD + m.get_name() + r + "ing");
 		} else {
 			// should send we do a little bit of strafeing
-			send_client_message("we ain't " + ChatFormatting.BOLD + m.get_name().toLowerCase() + r + " no more")
+			send_client_message("we ain't " + ChatFormatting.BOLD + m.get_name().toLowerCase() + r + " no more");
 		}
 	}
 
