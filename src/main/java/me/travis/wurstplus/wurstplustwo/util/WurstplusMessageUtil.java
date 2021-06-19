@@ -3,6 +3,7 @@ package me.travis.wurstplus.wurstplustwo.util;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.travis.wurstplus.Wurstplus;
 import me.travis.wurstplus.wurstplustwo.hacks.WurstplusHack;
+package me.travis.wurstplus.wurstplustwo.util.WurstplusWatermarkUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -25,17 +26,25 @@ public class WurstplusMessageUtil {
 	public static String opener = g + Wurstplus.WURSTPLUS_NAME + ChatFormatting.GRAY + " > " + r;
 
 	public static void toggle_message(WurstplusHack module) {
+
+		if (WurstplusWatermarkChatMods.is_active()) {
+			opener = WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
+		}
+
+		// block game shit
+
 		if (module.is_active()) {
 			if (module.get_tag().equals("AutoCrystal")) {
-				client_message_simple(opener + "we" + ChatFormatting.DARK_GREEN + " gaming ");
+					client_message_simple(opener + "we do a lil bit of " + ChatFormatting.DARK_GREEN + " trollin' ");
+				}
 			} else {
-				client_message_simple(opener + r + module.get_name() + ChatFormatting.DARK_GREEN + " Enabled");
-			}			
+				client_message_simple(opener + "we do be " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
+			}
 		} else {
 			if (module.get_tag().equals("AutoCrystal")) {
-				client_message_simple(opener + "we aint" + ChatFormatting.RED + " gaming " + r + "no more");
+				client_message_simple(opener + "we aint" + ChatFormatting.RED + " trollin' " + r + "no more");
 			} else {
-				client_message_simple(opener + r + module.get_name() + ChatFormatting.RED + " Disabled");
+				client_message_simple(opener + "we ain't " + ChatFormatting.RED + module.get_name().toLowerCase() + r + "in'");
 			}
 		}
 	}
@@ -54,15 +63,19 @@ public class WurstplusMessageUtil {
 	}
 
 	public static void send_client_message_simple(String message) {
-		client_message(ChatFormatting.GOLD + Wurstplus.WURSTPLUS_NAME + " " + r + message);
+		if (module.is_active()) {
+			client_message(ChatFormatting.GOLD + opener + r + message);
+		} else {
+			client_message(ChatFormatting.GOLD + opener + r + message);
+		}
 	}
 
 	public static void send_client_message(String message) {
-		client_message(ChatFormatting.GOLD + Wurstplus.WURSTPLUS_NAME + " " + r + message);
+		client_message(ChatFormatting.GOLD + opener + r + message);
 	}
 
 	public static void send_client_error_message(String message) {
-		client_message(ChatFormatting.RED + Wurstplus.WURSTPLUS_NAME + " " + r + message);
+		client_message(ChatFormatting.RED + opener + r + message);
 	}
 
 	public static class ChatMessage extends TextComponentBase {

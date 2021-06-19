@@ -20,6 +20,7 @@ public class WurstplusCommands {
 		style = style_;
 
 		add_command(new WurstplusBind());
+		add_command(new WurstplusWatermarkChat());
 		add_command(new WurstplusPrefix());
 		add_command(new WurstplusSettings());
 		add_command(new WurstplusToggle());
