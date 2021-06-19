@@ -1,5 +1,6 @@
 package me.travis.wurstplus.wurstplustwo.util;
 
+import me.travis.wurstplus.Wurstplus;
 public class WurstplusChatSuffixUtil {
 
     private static String message;
@@ -9,7 +10,12 @@ public class WurstplusChatSuffixUtil {
     }
 
     public static String get_message() {
+      if (message == null) {
+        message = "wurstplus two";
         return message;
+      } else {
+        return message;
+      }
     }
 
 }

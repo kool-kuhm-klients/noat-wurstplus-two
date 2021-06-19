@@ -3,6 +3,7 @@ package me.travis.wurstplus.wurstplustwo.util;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.travis.wurstplus.Wurstplus;
 import me.travis.wurstplus.wurstplustwo.hacks.WurstplusHack;
+import me.travis.wurstplus.wurstplustwo.util.WurstplusWatermarkUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -22,7 +23,7 @@ public class WurstplusMessageUtil {
 	public static ChatFormatting a = ChatFormatting.DARK_AQUA;
 	public static ChatFormatting r = ChatFormatting.RESET;
 
-	public static String opener = g + Wurstplus.WURSTPLUS_NAME + ChatFormatting.GRAY + " > " + r;
+	public static String opener = g + WurstplusChatSuffixUtil.get_message() + ChatFormatting.GRAY + " > " + r;
 
 	public static void toggle_message(WurstplusHack module) {
 		if (module.is_active()) {
