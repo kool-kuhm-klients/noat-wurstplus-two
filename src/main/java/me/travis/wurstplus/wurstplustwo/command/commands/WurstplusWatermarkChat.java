@@ -9,7 +9,7 @@ import me.travis.wurstplus.wurstplustwo.util.WurstplusMessageUtil;
 public class WurstplusWatermarkChat extends WurstplusCommand {
 
     public WurstplusWatermarkChat() {
-        super("chatwatermark", "change wurstplus chat watermark thing");
+        super("watermarkchat", "change wurstplus chat watermark thing");
     }
 
     public boolean get_message(String[] message) {

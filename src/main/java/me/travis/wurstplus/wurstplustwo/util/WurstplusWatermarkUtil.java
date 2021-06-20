@@ -11,6 +11,12 @@ public class WurstplusWatermarkUtil {
     }
 
     public static String get_message() {
-      return message;
+      if (message == null) {
+        message = "noat's Wurst+ 2";
+        return message;
+      } else {
+        return message;
+      }
     }
+
 }
