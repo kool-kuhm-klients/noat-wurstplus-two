@@ -4,7 +4,7 @@ import me.travis.wurstplus.Wurstplus;
 
 public class WurstplusWatermarkUtil {
 
-    private static String message = Wurstplus.WURSTPLUS_NAME;
+    private static String message;
 
     public static void set_message(String message) {
         WurstplusWatermarkUtil.message = message;
