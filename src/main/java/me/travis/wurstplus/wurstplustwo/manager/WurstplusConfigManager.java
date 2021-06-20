@@ -131,8 +131,8 @@ public class WurstplusConfigManager {
 
     private void load_chatsuffixmessage() throws IOException {
       StringBuilder cs = new StringBuilder();
-      for (String s : Files.readAllLines(CHATSUFFIX_PATH)) {
-          sb.append(s);
+      for (String csm : Files.readAllLines(CHATSUFFIX_PATH)) {
+          cs.append(csm);
       }
       WurstplusEzMessageUtil.set_message(cs.toString());
     }
