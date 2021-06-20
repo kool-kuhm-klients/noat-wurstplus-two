@@ -61,6 +61,7 @@ public class WurstplusConfigManager {
 
     // FILE PATHS
     private final Path CLIENT_PATH = Paths.get(CLIENT_DIR);
+    private final Path CHATSUFFIX_PATH = Paths.get(CHATSUFFIX_DIR)
     private final Path CONFIG_PATH = Paths.get(CONFIG_DIR);
     private final Path DRAWN_PATH = Paths.get(DRAWN_DIR);
     private final Path EZ_PATH = Paths.get(EZ_DIR);
@@ -129,11 +130,11 @@ public class WurstplusConfigManager {
     }
 
     private void load_chatsuffixmessage() throws IOException {
-        StringBuilder sb = new StringBuilder();
-        for (String s : Files.readAllLines(CHATSUFFIX_PATH)) {
-            sb.append(s);
-        }
-        WurstplusChatSuffixUtil.set_message(sb.toString());
+      StringBuilder cs = new StringBuilder();
+      for (String s : Files.readAllLines(CHATSUFFIX_PATH)) {
+          sb.append(s);
+      }
+      WurstplusEzMessageUtil.set_message(cs.toString());
     }
 
     // LOAD & SAVE DRAWN
