@@ -61,7 +61,7 @@ public class WurstplusConfigManager {
 
     // FILE PATHS
     private final Path CLIENT_PATH = Paths.get(CLIENT_DIR);
-    private final Path CHATSUFFIX_PATH = Paths.get(CHATSUFFIX_DIR)
+    private final Path CHATSUFFIX_PATH = Paths.get(CHATSUFFIX_DIR);
     private final Path CONFIG_PATH = Paths.get(CONFIG_DIR);
     private final Path DRAWN_PATH = Paths.get(DRAWN_DIR);
     private final Path EZ_PATH = Paths.get(EZ_DIR);
