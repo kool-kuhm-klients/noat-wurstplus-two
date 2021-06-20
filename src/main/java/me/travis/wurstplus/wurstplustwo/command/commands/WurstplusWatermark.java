@@ -8,7 +8,7 @@ import me.travis.wurstplus.wurstplustwo.util.WurstplusMessageUtil;
 
 public class WurstplusWatemrark extends WurstplusCommand {
 
-    public WurstpluswmChat() {
+    public WurstplusWatermark() {
         super("chatwm", "change wurstplus chat wm thing");
     }
 
