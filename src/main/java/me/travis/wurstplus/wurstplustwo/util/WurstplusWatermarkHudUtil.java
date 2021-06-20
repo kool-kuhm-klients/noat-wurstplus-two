@@ -7,7 +7,7 @@ public class WurstplusWatermarkHudUtil {
     private static String message;
 
     public static void set_message(String message) {
-        WurstplusWatermarkUtil.message = message;
+        WurstplusWatermarkHudUtil.message = message;
     }
 
     public static String get_message() {
