@@ -3,13 +3,13 @@ package me.travis.wurstplus.wurstplustwo.command.commands;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.travis.wurstplus.Wurstplus;
 import me.travis.wurstplus.wurstplustwo.command.WurstplusCommand;
-import me.travis.wurstplus.wurstplustwo.util.WurstplusWatermarkUtil;
+import me.travis.wurstplus.wurstplustwo.util.WurstplusWatermarkHudUtil;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusMessageUtil;
 
-public class WurstplusWatermarkChat extends WurstplusCommand {
+public class WurstplusWatemrark extends WurstplusCommand {
 
-    public WurstplusWatermarkChat() {
-        super("chatwatermark", "change wurstplus chat watermark thing");
+    public WurstpluswmChat() {
+        super("chatwm", "change wurstplus chat wm thing");
     }
 
     public boolean get_message(String[] message) {
@@ -20,17 +20,17 @@ public class WurstplusWatermarkChat extends WurstplusCommand {
         }
 
         if (message.length >= 2) {
-            StringBuilder watermark = new StringBuilder();
+            StringBuilder wm = new StringBuilder();
             boolean flag = true;
             for (String word : message) {
                 if (flag) {
                     flag = false;
                     continue;
                 }
-                watermark.append(word).append(" ");
+                wm.append(word).append(" ");
             }
-            WurstplusWatermarkUtil.set_message(watermark.toString());
-            WurstplusMessageUtil.send_client_message("watermark message changed to " + ChatFormatting.BOLD + watermark.toString());
+            WurstplusWatermarkHudUtil.set_message(wm.toString());
+            WurstplusMessageUtil.send_client_message("wm message changed to " + ChatFormatting.BOLD + wm.toString());
             Wurstplus.get_config_manager().save_settings();
             return true;
         }

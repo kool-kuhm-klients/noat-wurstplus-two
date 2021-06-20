@@ -26,6 +26,7 @@ public class WurstplusCommands {
 		add_command(new WurstplusToggle());
 		add_command(new WurstplusAlert());
 		add_command(new WurstplusHelp());
+		add_command(new WurstplusWatermark());
 		add_command(new WurstplusFriend());
 		add_command(new WurstplusDrawn());
 		add_command(new WurstplusEzMessage());

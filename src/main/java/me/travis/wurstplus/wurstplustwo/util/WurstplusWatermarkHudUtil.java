@@ -2,7 +2,7 @@ package me.travis.wurstplus.wurstplustwo.util;
 
 import me.travis.wurstplus.Wurstplus;
 
-public class WurstplusWatermarkUtil {
+public class WurstplusWatermarkHudUtil {
 
     private static String message;
 
