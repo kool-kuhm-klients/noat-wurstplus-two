@@ -11,6 +11,7 @@ import me.travis.wurstplus.wurstplustwo.util.WurstplusDrawnUtil;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusEnemyUtil;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusEzMessageUtil;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusFriendUtil;
+import me.travis.wurstplus.wurstplustwo.util.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -129,7 +130,7 @@ public class WurstplusConfigManager {
 
     private void load_chatsuffixmessage() throws IOException {
         StringBuilder sb = new StringBuilder();
-        for (String s : Files.readAllLines(CHATSUFFIX_DIR)) {
+        for (String s : Files.readAllLines(CHATSUFFIX_PATH)) {
             sb.append(s);
         }
         WurstplusChatSuffixUtil.set_message(sb.toString());
