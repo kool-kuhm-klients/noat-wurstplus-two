@@ -34,6 +34,7 @@ public class WurstplusConfigManager {
     private final String CONFIG_FILE = "config.txt";
     private final String DRAWN_FILE = "drawn.txt";
     private final String EZ_FILE = "ez.txt";
+    private final String CHATSUFFIX_FILE = "chatsuffix.txt";
     private final String ENEMIES_FILE = "enemies.json";
     private final String FRIENDS_FILE = "friends.json";
     private final String HUD_FILE = "hud.json";
@@ -44,6 +45,7 @@ public class WurstplusConfigManager {
     private final String CONFIG_DIR = MAIN_FOLDER + CONFIG_FILE;
     private final String DRAWN_DIR = MAIN_FOLDER + DRAWN_FILE;
     private final String EZ_DIR = MAIN_FOLDER + EZ_FILE;
+    private final String CHATSUFFIX_DIR = MAIN_FOLDER + CHATSUFFIX_FILE;
     private final String ENEMIES_DIR = MAIN_FOLDER + ENEMIES_FILE;
     private final String FRIENDS_DIR = MAIN_FOLDER + FRIENDS_FILE;
     private final String HUD_DIR = MAIN_FOLDER + HUD_FILE;
@@ -101,13 +103,36 @@ public class WurstplusConfigManager {
         writer.close();
 
     }
-
     private void load_ezmessage() throws IOException {
         StringBuilder sb = new StringBuilder();
         for (String s : Files.readAllLines(EZ_PATH)) {
             sb.append(s);
         }
         WurstplusEzMessageUtil.set_message(sb.toString());
+    }
+
+    // LOAD & SAVE CHATSUFFIX MESSAGE
+
+    private void save_chatsuffixmessage() throws IOException {
+
+        FileWriter writer = new FileWriter(CHATSUFFIX_DIR);
+
+        try {
+            writer.write(WurstplusChatSuffixUtil.get_message());
+        } catch (Exception ignored) {
+            writer.write("test message");
+        }
+
+        writer.close();
+
+    }
+
+    private void load_chatsuffixmessage() throws IOException {
+        StringBuilder sb = new StringBuilder();
+        for (String s : Files.readAllLines(CHATSUFFIX_DIR)) {
+            sb.append(s);
+        }
+        WurstplusChatSuffixUtil.set_message(sb.toString());
     }
 
     // LOAD & SAVE DRAWN
@@ -454,6 +479,7 @@ public class WurstplusConfigManager {
             save_client();
             save_drawn();
             save_ezmessage();
+            save_chatsuffixmessage();
             save_hud();
         } catch (IOException e) {
             send_minecraft_log("Something has gone wrong while saving settings");
@@ -471,6 +497,7 @@ public class WurstplusConfigManager {
             load_ezmessage();
             load_friends();
             load_hacks();
+            load_chatsuffixmessage();
             load_hud();
         } catch (IOException e) {
             send_minecraft_log("Something has gone wrong while loading settings");
