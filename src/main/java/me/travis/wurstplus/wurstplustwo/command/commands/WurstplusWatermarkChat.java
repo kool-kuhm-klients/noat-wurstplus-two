@@ -20,17 +20,17 @@ public class WurstplusWatermarkChat extends WurstplusCommand {
         }
 
         if (message.length >= 2) {
-            StringBuilder watermark = new StringBuilder();
+            StringBuilder wm = new StringBuilder();
             boolean flag = true;
             for (String word : message) {
                 if (flag) {
                     flag = false;
                     continue;
                 }
-                watermark.append(word).append(" ");
+                wm.append(word).append(" ");
             }
-            WurstplusWatermarkUtil.set_message(watermark.toString());
-            WurstplusMessageUtil.send_client_message("watermark message changed to " + ChatFormatting.BOLD + watermark.toString());
+            WurstplusWatermarkUtil.set_message(wm.toString());
+            WurstplusMessageUtil.send_client_message("watermark changed to " + ChatFormatting.BOLD + wm.toString());
             Wurstplus.get_config_manager().save_settings();
             return true;
         }
