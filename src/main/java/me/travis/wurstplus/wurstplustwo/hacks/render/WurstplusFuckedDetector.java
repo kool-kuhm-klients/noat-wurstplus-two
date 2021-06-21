@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class WurstplusFuckedDetector extends WurstplusHack {
-    
+
     public WurstplusFuckedDetector() {
         super(WurstplusCategory.WURSTPLUS_RENDER);
 
@@ -30,8 +30,8 @@ public class WurstplusFuckedDetector extends WurstplusHack {
 
     WurstplusSetting render_mode = create("Render Mode", "FuckedRenderMode", "Pretty", combobox("Pretty", "Solid", "Outline"));
     WurstplusSetting r = create("R", "FuckedR", 255, 0, 255);
-	WurstplusSetting g = create("G", "FuckedG", 255, 0, 255);
-	WurstplusSetting b = create("B", "FuckedB", 255, 0, 255);
+	  WurstplusSetting g = create("G", "FuckedG", 255, 0, 255);
+	  WurstplusSetting b = create("B", "FuckedB", 255, 0, 255);
     WurstplusSetting a = create("A", "FuckedA", 100, 0, 255);
 
     private boolean solid;
@@ -78,16 +78,16 @@ public class WurstplusFuckedDetector extends WurstplusHack {
 
         if (WurstplusCrystalUtil.canPlaceCrystal(pos.south()) || (WurstplusCrystalUtil.canPlaceCrystal(pos.south().south()) && mc.world.getBlockState(pos.add(0, 1, 1)).getBlock() == Blocks.AIR)) {
             return true;
-        } 
-            
+        }
+
         if (WurstplusCrystalUtil.canPlaceCrystal(pos.east()) || (WurstplusCrystalUtil.canPlaceCrystal(pos.east().east()) && mc.world.getBlockState(pos.add(1, 1, 0)).getBlock() == Blocks.AIR)) {
             return true;
-        } 
-            
+        }
+
         if (WurstplusCrystalUtil.canPlaceCrystal(pos.west()) || (WurstplusCrystalUtil.canPlaceCrystal(pos.west().west()) && mc.world.getBlockState(pos.add(-1, 1, 0)).getBlock() == Blocks.AIR)) {
             return true;
-        } 
-            
+        }
+
         if (WurstplusCrystalUtil.canPlaceCrystal(pos.north()) || (WurstplusCrystalUtil.canPlaceCrystal(pos.north().north()) && mc.world.getBlockState(pos.add(0, 1, -1)).getBlock() == Blocks.AIR)) {
             return true;
         }
@@ -128,8 +128,8 @@ public class WurstplusFuckedDetector extends WurstplusHack {
                         "all"
                 );
                 RenderHelp.release();
-            }        
-    
+            }
+
             if (outline) {
                 RenderHelp.prepare("lines");
                 RenderHelp.draw_cube_line(RenderHelp.get_buffer_build(),
@@ -139,10 +139,10 @@ public class WurstplusFuckedDetector extends WurstplusHack {
                         "all"
                 );
                 RenderHelp.release();
-            }        
+            }
 
         }
-        
+
     }
 
 }
