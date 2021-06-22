@@ -1,6 +1,6 @@
 package me.travis.wurstplus.wurstplustwo.guiscreen.hud;
 
-
+import java.awt.Color;
 import me.travis.wurstplus.Wurstplus;
 import me.travis.wurstplus.wurstplustwo.guiscreen.render.pinnables.WurstplusPinnable;
 
