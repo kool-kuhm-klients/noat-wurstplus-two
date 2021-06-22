@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 
 public class WurstplusTotempop extends WurstplusHack {
-    
+
     public WurstplusTotempop() {
 		super(WurstplusCategory.WURSTPLUS_CHAT);
 
@@ -26,7 +26,7 @@ public class WurstplusTotempop extends WurstplusHack {
     }
 
     public static final HashMap<String, Integer> totem_pop_counter = new HashMap<String, Integer>();
-    
+
     public static ChatFormatting red = ChatFormatting.RED;
     public static ChatFormatting green = ChatFormatting.GREEN;
     public static ChatFormatting gold = ChatFormatting.GOLD;
@@ -57,9 +57,9 @@ public class WurstplusTotempop extends WurstplusHack {
                 if (entity == mc.player) return;
 
                 if (WurstplusFriendUtil.isFriend(entity.getName())) {
-                    WurstplusMessageUtil.send_client_message( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + green + entity.getName() + reset + " has popped " + bold + count + reset + " totems. you should go help them");
+                    WurstplusMessageUtil.client_message_simple( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + green + entity.getName() + reset + " has popped " + bold + count + reset + " totems. you should go help them");
                 } else {
-                    WurstplusMessageUtil.send_client_message( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + red + entity.getName() + reset + " has popped " + bold + count + reset + " totems. what a loser");
+                    WurstplusMessageUtil.client_message_simple( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + red + entity.getName() + reset + " has popped " + bold + count + reset + " totems. what a loser");
                 }
 
             }
@@ -70,7 +70,7 @@ public class WurstplusTotempop extends WurstplusHack {
 
     @Override
 	public void update() {
-        
+
         for (EntityPlayer player : mc.world.playerEntities) {
 
             if (!totem_pop_counter.containsKey(player.getName())) continue;
@@ -84,9 +84,9 @@ public class WurstplusTotempop extends WurstplusHack {
                 if (player == mc.player) continue;
 
                 if (WurstplusFriendUtil.isFriend(player.getName())) {
-                    WurstplusMessageUtil.send_client_message( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + green + player.getName() + reset + " just fucking DIED after popping " + bold + count + reset + " totems. RIP :pray:");
+                    WurstplusMessageUtil.client_message_simple( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + green + player.getName() + reset + " just fucking DIED after popping " + bold + count + reset + " totems. RIP :pray:");
                 } else {
-                    WurstplusMessageUtil.send_client_message( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + red + player.getName() + reset + " just fucking DIED after popping " + bold + count + reset + " totems");
+                    WurstplusMessageUtil.client_message_simple( red + "" + bold + " TotemPop " + reset + grey + " > " + reset + "dude, " + bold + red + player.getName() + reset + " just fucking DIED after popping " + bold + count + reset + " totems");
                 }
 
             }
