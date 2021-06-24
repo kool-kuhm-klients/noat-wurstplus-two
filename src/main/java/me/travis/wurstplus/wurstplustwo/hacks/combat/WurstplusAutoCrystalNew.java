@@ -82,6 +82,7 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
 
     WurstplusSetting fuck_armor_mode = create("Armor Destroy", "CaArmorDestory", true);
     WurstplusSetting fuck_armor_mode_precent = create("Armor %", "CaArmorPercent", 25, 0, 100);
+    WurstplusSetting multiplace_armor = create("Armor Multiplace", "CaArmorMultiplace", false);
 
     WurstplusSetting stop_while_mining = create("Stop While Mining", "CaStopWhileMining", false);
     WurstplusSetting faceplace_check = create("No Sword FP", "CaJumpyFaceMode", false);
@@ -326,7 +327,37 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
 
                 boolean no_place = faceplace_check.get_value(true) && mc.player.getHeldItemMainhand().getItem() == Items.DIAMOND_SWORD;
                 if ((target.getHealth() < faceplace_mode_damage.get_value(1) && faceplace_mode.get_value(true)&& !no_place) || (get_armor_fucker(target) && !no_place)) {
-                    minimum_damage = 2;
+                    if (multiplace_armor.get_value(true)) {
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.south())) {
+                        return multiplace_crystal
+                      }
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.north())) {
+                        return multiplace_crystal
+                      }
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.west())) {
+                        return multiplace_crystal
+                      }
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.east())) {
+                        return multiplace_crystal
+                      }
+                      WurstplusBlockUtil.placeCrystalOnBlock(multiplace_crystal, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.south())) {
+                        return multiplace_crystal
+                      }
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.north())) {
+                        return multiplace_crystal
+                      }
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.west())) {
+                        return multiplace_crystal
+                      }
+                      if (WurstplusCrystalUtil.canPlaceCrystal(pos.east())) {
+                        return multiplace_crystal
+                      }
+                      WurstplusBlockUtil.placeCrystalOnBlock(multiplace_crystal, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
+                      WurstplusCrystalUtil.attackEntity(multiplace_crystal, false, swing);
+                    } else {
+                      minimum_damage = 2;
+                    }
                 } else {
                     minimum_damage = this.min_player_break.get_value(1);
                 }
