@@ -120,7 +120,7 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
 
     private BlockPos render_block_init;
     private BlockPos render_block_old;
-    private BlockPos multiplace_crystal;
+    private EntityEnderCrystal multiplace_crystal;
 
     private double render_damage_value;
 
