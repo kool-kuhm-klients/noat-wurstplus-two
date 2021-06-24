@@ -3,7 +3,7 @@ package me.travis.wurstplus.wurstplustwo.command.commands;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.travis.wurstplus.Wurstplus;
 import me.travis.wurstplus.wurstplustwo.command.WurstplusCommand;
-import me.travis.wurstplus.wurstplustwo.util.WurstplusChatSuffixUtil;
+import me.travis.wurstplus.wurstplustwo.util.WurstplusWatermarkUtil;
 import me.travis.wurstplus.wurstplustwo.util.WurstplusMessageUtil;
 
 public class WurstplusWatermarkChat extends WurstplusCommand {
