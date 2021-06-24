@@ -428,7 +428,7 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
                 boolean no_place = faceplace_check.get_value(true) && mc.player.getHeldItemMainhand().getItem() == Items.DIAMOND_SWORD;
                 if ((target.getHealth() < faceplace_mode_damage.get_value(1) && faceplace_mode.get_value(true)&& !no_place) || (get_armor_fucker(target) && !no_place)) {
                   if (multiplace_armor.get_value(true)) {
-                    BlockPos pos = new BlockPos(target.posX, target.posY, target.posZ);
+                    BlockPos pos = new BlockPos(target.getX(), target.getY(), target.getZ());
                     if (WurstplusCrystalUtil.canPlaceCrystal(pos.south())) {
                       return null;
                     }
