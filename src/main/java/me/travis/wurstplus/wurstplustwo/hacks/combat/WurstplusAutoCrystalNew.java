@@ -120,6 +120,7 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
 
     private BlockPos render_block_init;
     private BlockPos render_block_old;
+    private BlockPos multiplace_crystal;
 
     private double render_damage_value;
 
@@ -329,29 +330,29 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
                 if ((target.getHealth() < faceplace_mode_damage.get_value(1) && faceplace_mode.get_value(true)&& !no_place) || (get_armor_fucker(target) && !no_place)) {
                     if (multiplace_armor.get_value(true)) {
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.south())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.north())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.west())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.east())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       WurstplusBlockUtil.placeCrystalOnBlock(multiplace_crystal, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.south())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.north())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.west())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       if (WurstplusCrystalUtil.canPlaceCrystal(pos.east())) {
-                        return multiplace_crystal
+                        return multiplace_crystal;
                       }
                       WurstplusBlockUtil.placeCrystalOnBlock(multiplace_crystal, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
                       WurstplusCrystalUtil.attackEntity(multiplace_crystal, false, swing);
