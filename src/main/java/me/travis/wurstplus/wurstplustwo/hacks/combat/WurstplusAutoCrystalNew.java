@@ -502,8 +502,8 @@ public class WurstplusAutoCrystalNew extends WurstplusHack {
         chain_timer.reset();
         if (multiplace_armor.get_value(true)) {
           WurstplusBlockUtil.placeCrystalOnBlock(target_block, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
-          BlockPos target_block = get_best_block();
-          WurstplusBlockUtil.placeCrystalOnBlock(target_block, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
+          BlockPos another_block = get_best_block();
+          WurstplusBlockUtil.placeCrystalOnBlock(another_block, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
         } else {
           WurstplusBlockUtil.placeCrystalOnBlock(target_block, offhand_check ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
         }
