@@ -28,16 +28,9 @@ public class WurstplusWatermark extends WurstplusPinnable {
 	}
 
 	public void cycle_rainbow() {
-
-			float[] tick_color = {
-							(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
-			};
-
-			int color_rgb_o = Color.HSBtoRGB(tick_color[0], sat.get_value(1), brightness.get_value(1));
-
-			nl_r.set_value((color_rgb_o >> 16) & 0xFF);
-			nl_g.set_value((color_rgb_o >> 8) & 0xFF);
-			nl_b.set_value(color_rgb_o & 0xFF);
+			nl_r.set_value(nl_r.get_value(1) + 3);
+			nl_g.set_value(nl_g.get_value(1) + 2);
+			nl_b.set_value(nl_b.get_value(1) + 1);
 
 	}
 }
