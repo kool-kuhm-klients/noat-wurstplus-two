@@ -12,8 +12,6 @@ public class WurstplusWatermark extends WurstplusPinnable {
 
 	@Override
 	public void render() {
-		cycle_rainbow();
-
 		int nl_r = Wurstplus.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
 		int nl_g = Wurstplus.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
 		int nl_b = Wurstplus.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
@@ -25,12 +23,5 @@ public class WurstplusWatermark extends WurstplusPinnable {
 
 		this.set_width(this.get(line, "width") + 2);
 		this.set_height(this.get(line, "height") + 2);
-	}
-
-	public void cycle_rainbow() {
-			nl_r.set_value(nl_r.get_value(1) + 3);
-			nl_g.set_value(nl_g.get_value(1) + 2);
-			nl_b.set_value(nl_b.get_value(1) + 1);
-
 	}
 }
