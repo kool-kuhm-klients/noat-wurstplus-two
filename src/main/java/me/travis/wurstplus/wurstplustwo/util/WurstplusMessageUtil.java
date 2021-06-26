@@ -23,7 +23,7 @@ public class WurstplusMessageUtil {
 	public static ChatFormatting a = ChatFormatting.DARK_AQUA;
 	public static ChatFormatting r = ChatFormatting.RESET;
 
-	public static String opener = g + WurstplusWatermarkUtil.get_message() + ChatFormatting.GRAY + " > " + r;
+	public static String opener = g + Wurstplus.WURSTPLUS_NAME + ChatFormatting.GRAY + " > " + r;
 
 	public static void toggle_message(WurstplusHack module) {
 		if (module.is_active()) {
