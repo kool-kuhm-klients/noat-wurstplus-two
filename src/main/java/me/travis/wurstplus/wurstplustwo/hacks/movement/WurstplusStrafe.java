@@ -17,7 +17,7 @@ public class WurstplusStrafe extends WurstplusHack {
 	public WurstplusStrafe() {
 		super(WurstplusCategory.WURSTPLUS_MOVEMENT);
 
-		this.name        = "Speed";
+		this.name        = "Strafe";
 		this.tag         = "Strafe";
 		this.description = "its like running, but faster";
 	}
